@@ -7,11 +7,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject obstaclePrefab;
 
     private float spawnRangeY = 10;
-    private float spawnZMin = -13; // set min spawn Z
-    private float spawnZMax = -4; // set max spawn Z
+    private float spawnYMin = 1; // set min spawn Y
+    private float spawnYMax = 8.5f; // set max spawn Y
+    private float spawnZMin = 15; // set min spawn Z
+    private float spawnZMax = 25; // set max spawn Z
 
-    private float spawnXMin = -5; // set min spawn Y
-    private float spawnXMax = 3.7f; // set max spawn Y
+    private float spawnXMin = -4.5f; // set min spawn Y
+    private float spawnXMax = 3.5f; // set max spawn Y
 
     public int enemyCount;
     public int waveCount = 1;
@@ -31,18 +33,20 @@ public class SpawnManager : MonoBehaviour
     {
         float zPos = Random.Range(spawnZMin, spawnZMax);
         float xPos = Random.Range(spawnXMin, spawnXMax);
-        return new Vector3(xPos, spawnRangeY, zPos);
+        float yPos = Random.Range(spawnYMin, spawnYMax);
+        return new Vector3(xPos, yPos, zPos);
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
     {
         // Spawn number of enemy balls based on wave number
     
-        
-            Instantiate(obstaclePrefab, GenerateSpawnPosition(), obstaclePrefab.transform.rotation);
-        
+        for (int i = 0; i < 2; i++)
+        {
+        Instantiate(obstaclePrefab, GenerateSpawnPosition(), obstaclePrefab.transform.rotation);
+        }
 
-        enemySpeed += 15;
+        // enemySpeed += 15;
 
     }
 
