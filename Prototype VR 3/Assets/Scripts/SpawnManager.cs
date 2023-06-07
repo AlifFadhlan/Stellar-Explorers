@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject[] obstaclePrefab;
 
-    private float spawnRangeY = 10;
+
+    // private float spawnRangeY = 10;
     private float spawnYMin = 1; // set min spawn Y
     private float spawnYMax = 8.5f; // set max spawn Y
     private float spawnZMin = 15; // set min spawn Z
@@ -18,6 +19,7 @@ public class SpawnManager : MonoBehaviour
     public int enemyCount;
     public int waveCount = 1;
     public float enemySpeed = 10f;
+    public float enemiesToSpawn = 1;
 
     void Update()
     {
@@ -25,7 +27,7 @@ public class SpawnManager : MonoBehaviour
 
         if (enemyCount == 0)
         {
-            SpawnEnemyWave(waveCount);
+            SpawnEnemyWave();
         }
 
     }
@@ -37,18 +39,20 @@ public class SpawnManager : MonoBehaviour
         return new Vector3(xPos, yPos, zPos);
     }
 
-    void SpawnEnemyWave(int enemiesToSpawn)
+    void SpawnEnemyWave()
     {
         // Spawn number of enemy balls based on wave number
-    
-        for (int i = 0; i < 2; i++)
+        
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
-        Instantiate(obstaclePrefab, GenerateSpawnPosition(), obstaclePrefab.transform.rotation);
+            int randomIndex = Random.Range(0, obstaclePrefab.Length);
+        Instantiate(obstaclePrefab[randomIndex], GenerateSpawnPosition(), obstaclePrefab[randomIndex].transform.rotation);
         }
 
         // enemySpeed += 15;
 
     }
+    
 
 
 }
