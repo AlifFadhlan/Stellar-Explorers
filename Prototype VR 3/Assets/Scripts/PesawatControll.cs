@@ -37,6 +37,7 @@ public class PesawatControll : MonoBehaviour
             // Clamp claw position
             clawPosition.x = Mathf.Clamp(clawPosition.x, m_MinClawPosition.x, m_MaxClawPosition.x);
             clawPosition.z = Mathf.Clamp(clawPosition.z, m_MinClawPosition.y, m_MaxClawPosition.y);
+            clawPosition.y = Mathf.Clamp(clawPosition.y, m_MinClawPosition.z, m_MaxClawPosition.z);
 
             // Update claw position
             posisiPesawat.position = clawPosition;
