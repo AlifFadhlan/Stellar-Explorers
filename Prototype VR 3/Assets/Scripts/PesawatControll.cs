@@ -6,6 +6,8 @@ public class PesawatControll : MonoBehaviour
 {
         [SerializeField] float movementSpeed;
 
+        [SerializeField] float rotationSpeed;
+
         [SerializeField] float rollSpeed;
         [SerializeField] float pitchFactor;
 
@@ -41,6 +43,13 @@ public class PesawatControll : MonoBehaviour
 
             // Update claw position
             posisiPesawat.position = clawPosition;
+            
+            // // Calculate rotation based on joystick input
+            // float rotationX = m_JoystickValue.x * rotationSpeed * Time.deltaTime;
+            // float rotationY = m_JoystickValue.y * rotationSpeed * Time.deltaTime;
+
+            // // Apply rotation to the airplane
+            // posisiPesawat.rotation *= Quaternion.Euler(rotationX, rotationY, 0f);
         }
 
     float horizontalInput;

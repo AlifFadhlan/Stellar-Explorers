@@ -10,8 +10,8 @@ public class SpawnManager : MonoBehaviour
     // private float spawnRangeY = 10;
     private float spawnYMin = 1; // set min spawn Y
     private float spawnYMax = 8.5f; // set max spawn Y
-    private float spawnZMin = 15; // set min spawn Z
-    private float spawnZMax = 25; // set max spawn Z
+    public float spawnZMin = 30; // set min spawn Z
+    public float spawnZMax = 40; // set max spawn Z
 
     private float spawnXMin = -4.5f; // set min spawn Y
     private float spawnXMax = 3.5f; // set max spawn Y
