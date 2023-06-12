@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obstaclePrefab;
+    public GameObject raykiri;
+    public GameObject raykanan;
+
+    [Header("Main Menu Buttons")]
+    public GameObject mainMenu;
+    public Button easyButton;
+    public Button mediumButton;
+    public Button hardButton;
 
 
     // private float spawnRangeY = 10;
@@ -21,6 +30,58 @@ public class SpawnManager : MonoBehaviour
     public float enemySpeed = 10f;
     public float enemiesToSpawn = 1;
 
+
+    public bool isGameActive = false;
+
+    void Start()
+    {
+        mainMenu.SetActive(true);
+        // Hook events
+        easyButton.onClick.AddListener(EasyGame);
+        mediumButton.onClick.AddListener(MediumGame);
+        hardButton.onClick.AddListener(HardGame);
+    }
+
+    public void EasyGame()
+    {
+        isGameActive = true;
+        mainMenu.SetActive(false);
+        enemySpeed = 10f;
+        enemiesToSpawn = 2;
+        Update();
+        raykiri.SetActive(false);
+        raykanan.SetActive(false);
+    }
+    public void MediumGame()
+    {
+        isGameActive = true;
+        mainMenu.SetActive(false);
+        enemySpeed = 10f;
+        enemiesToSpawn = 3;
+        Update();
+        raykiri.SetActive(false);
+        raykanan.SetActive(false);
+    }
+    public void HardGame()
+    {
+        isGameActive = true;
+        mainMenu.SetActive(false);
+        enemySpeed = 20f;
+        enemiesToSpawn = 3;
+        Update();
+        raykiri.SetActive(false);
+        raykanan.SetActive(false);
+    }
+
+    // public void GamePlay()
+    // {
+    //     enemyCount = GameObject.FindGameObjectsWithTag("Obstacle").Length;
+
+    //     if (enemyCount == 0)
+    //     {
+    //         SpawnEnemyWave();
+    //     }
+    // }
     void Update()
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Obstacle").Length;
