@@ -11,9 +11,13 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Main Menu Buttons")]
     public GameObject mainMenu;
+    public GameObject gameOverMenu;
     public Button easyButton;
     public Button mediumButton;
     public Button hardButton;
+    public Button restartButton;
+
+    public Score scoreScript;
 
 
     // private float spawnRangeY = 10;
@@ -40,6 +44,14 @@ public class SpawnManager : MonoBehaviour
         easyButton.onClick.AddListener(EasyGame);
         mediumButton.onClick.AddListener(MediumGame);
         hardButton.onClick.AddListener(HardGame);
+        restartButton.onClick.AddListener(RestartGame);
+    }
+
+    public void RestartGame()
+    {
+        gameOverMenu.SetActive(false);
+        mainMenu.SetActive(true);
+
     }
 
     public void EasyGame()
@@ -49,6 +61,7 @@ public class SpawnManager : MonoBehaviour
         enemySpeed = 10f;
         enemiesToSpawn = 2;
         Update();
+        scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
     }
@@ -59,6 +72,7 @@ public class SpawnManager : MonoBehaviour
         enemySpeed = 10f;
         enemiesToSpawn = 3;
         Update();
+        scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
     }
@@ -69,6 +83,7 @@ public class SpawnManager : MonoBehaviour
         enemySpeed = 20f;
         enemiesToSpawn = 3;
         Update();
+        scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
     }
@@ -112,6 +127,18 @@ public class SpawnManager : MonoBehaviour
 
         // enemySpeed += 15;
 
+    }
+
+    public void GameOver(){
+        isGameActive = false;
+        scoreScript.StopScore();
+        scoreScript.UpdateHighscore();
+        scoreScript.score = 0; // Mengatur ulang skor menjadi 0
+        scoreScript.scoreText.text = "0"; // Menampilkan skor 0 di UI
+        gameOverMenu.SetActive(true);
+        raykiri.SetActive(true);
+        raykanan.SetActive(true);
+        enemiesToSpawn=0;
     }
     
 
