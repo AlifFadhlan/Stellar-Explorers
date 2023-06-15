@@ -917,12 +917,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Di abad ke-23 manusia telah berhasil menjelajahi berbagai bagian luar
+  m_text: "Di abad ke-23 manusia telah berhasil menjelajahi berbagai bagian luar
     angkasa. Dalam penjelajahan mereka, sekelompok alien jahat yang dikenal sebagai
-    Xyrran telah mencuri prasasti dari Indonesia. Badan Antariksa Indonesia menugaskan
-    Astronot pemberani, Bangkit Rizki, untuk menjelajahi luar angkasa dan mengambil
-    kembali prasasti yang dicuri. Eskpedisi ini dinamai dengan Stellar Explorers:
-    Frontier Odyssey.'
+    Xyrran telah mencuri prasasti dari Indonesia.\nBadan Antariksa Indonesia menugaskan
+    Astronaut pemberani untuk menjelajahi luar angkasa dan mengambil kembali prasasti
+    yang dicuri. Ekspedisi ini dinamai dengan Stellar Explorers: Frontier Odyssey.
+    Pemain akan berperan sebagai Astrounout, yang harus menghindari obstacle ruang
+    angkasa yang muncul karena pemain hanya memiliki satu life point. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f50ebfa2cabecb94fb33634fe2b78233, type: 2}
   m_sharedMaterial: {fileID: 1205228406316116547, guid: f50ebfa2cabecb94fb33634fe2b78233, type: 2}
@@ -2434,7 +2435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0239, y: 0.766}
+  m_AnchoredPosition: {x: -0.0239, y: 0.889}
   m_SizeDelta: {x: 900, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225173490
