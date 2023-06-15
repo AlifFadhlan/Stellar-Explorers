@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -16,8 +17,11 @@ public class SpawnManager : MonoBehaviour
     public Button mediumButton;
     public Button hardButton;
     public Button restartButton;
+    public Button backToMenu;
 
     public Score scoreScript;
+
+    public ParticleSystem particleEffect;
 
 
     // private float spawnRangeY = 10;
@@ -45,6 +49,7 @@ public class SpawnManager : MonoBehaviour
         mediumButton.onClick.AddListener(MediumGame);
         hardButton.onClick.AddListener(HardGame);
         restartButton.onClick.AddListener(RestartGame);
+        backToMenu.onClick.AddListener(BackToMenu);
     }
 
     public void RestartGame()
@@ -57,6 +62,7 @@ public class SpawnManager : MonoBehaviour
     public void EasyGame()
     {
         isGameActive = true;
+        particleEffect.Play();
         mainMenu.SetActive(false);
         enemySpeed = 10f;
         enemiesToSpawn = 2;
@@ -64,10 +70,12 @@ public class SpawnManager : MonoBehaviour
         scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
+        
     }
     public void MediumGame()
     {
         isGameActive = true;
+        particleEffect.Play();
         mainMenu.SetActive(false);
         enemySpeed = 10f;
         enemiesToSpawn = 3;
@@ -75,18 +83,27 @@ public class SpawnManager : MonoBehaviour
         scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
+        
     }
     public void HardGame()
     {
         isGameActive = true;
+        particleEffect.Play();
         mainMenu.SetActive(false);
-        enemySpeed = 20f;
-        enemiesToSpawn = 3;
+        enemySpeed = 15f;
+        enemiesToSpawn = 4;
         Update();
         scoreScript.StartScore();
         raykiri.SetActive(false);
         raykanan.SetActive(false);
+        
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
+
 
     // public void GamePlay()
     // {
@@ -131,6 +148,7 @@ public class SpawnManager : MonoBehaviour
 
     public void GameOver(){
         isGameActive = false;
+        particleEffect.Stop();
         scoreScript.StopScore();
         scoreScript.UpdateHighscore();
         scoreScript.score = 0; // Mengatur ulang skor menjadi 0
