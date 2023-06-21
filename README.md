@@ -14,3 +14,7 @@ Kelompok ABGD D3IF-45-03
 Badan Antariksa Indonesia menugaskan Astronaut pemberani untuk menjelajahi luar angkasa dan mengambil kembali prasasti yang dicuri. Ekspedisi ini dinamai dengan Stellar Explorers: Frontier Odyssey. Pemain akan berperan sebagai Astrounout, yang harus menghindari obstacle ruang angkasa yang muncul karena pemain hanya memiliki satu life point.</p>
 <h2>Cara bermain</h2>
 <p>Pemain akan berperan sebagai Astrounout, yang harus menghindari obstacle ruang angkasa yang muncul karena pemain hanya memiliki satu life point. Pemain menggerakkan starship dengan meraih joystick di dalam game menggunakan controller Oculus Quest 2.</p>
+<h2>Link Game</h2>
+<p>Itch io : https://abgdteams.itch.io/stellar-explorers</p>
+<p>Video trailer : https://youtu.be/jsltJODZpTQ</p>
+<p>Full Project : https://telkomuniversityofficial-my.sharepoint.com/:f:/g/personal/amirhf_telkomuniversity_ac_id/EoYzI-JNYHlAgMEnrRrZstwBETOG9XJ0JLs6AfdM7LE5pQ?e=AZpZNA</p>
